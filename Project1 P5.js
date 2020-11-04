@@ -6,6 +6,7 @@ let x2=0;
 let x3=0;
 let x4=0;
 let x5=0;
+let cc = 800;
 let Angel_angel1;
 
 function setup() {
@@ -17,10 +18,11 @@ function setup() {
 function draw() {
   starry2();
   starry();
+  sun();
    rainbow();
   crystal4();
-  clouds();
-  sun();
+  //clouds();
+  //sun();
    display();
   crystal2();
   push();
@@ -33,41 +35,71 @@ function draw() {
   pop();
   crystal();
   crystal3();
+  clouds();
 
 }
 function starry() {     //yellow stars
-  for (let i = 0; i <width; i+=70) {
-    for (let j= 0; j<height; j+=70) {
+  //for (let i = 0; i <width; i+=70) {
+    //for (let j= 0; j<height; j+=70) {
+      //noStroke();
+     // fill(255,254,215);
+      //fill(0,0,255);
+     // ellipse(i, j, 8, 8);
+    //}
+ // }
+   for (let i = 500; i <1500; i+=90) {
+    for (let j= 500; j<1500; j+=90) {
+    
       noStroke();
       fill(255,254,215);
       //fill(0,0,255);
-      ellipse(i, j, 8, 8);
+      //ellipse(i, j, 8, 8);
+      ellipse(random(i), random(j),5,5);
     }
   }
 }
+
 function starry2() {    //purple rim outside yellow stars
-  for (let a=0; a<width; a+=70) {
-    for (let b=0; b<height; b+=70) {
+  //for (let a=0; a<width; a+=70) {
+    //for (let b=0; b<height; b+=70) {
+      //noStroke();
+      //fill(180,178,211);
+     // ellipse(a, b, 12, 12);
+   // }
+ // }
+   for (let a=500; a<1500; a+=100) {
+    for (let b=500; b<1500; b+=100) {
       noStroke();
-      fill(180,178,211);
-      ellipse(a, b, 12, 12);
+      //fill(#b4b2d3);
+      fill(239,248,250);
+      //ellipse(a, b, 12, 12);
+      ellipse(random(a),random(b),6,6);
     }
   }
 }
 function clouds() {
   fill(255);
-  ellipse(0, 800, 400, 300);
-  ellipse(300, 750, 400, 300);
-  ellipse(500, 800, 400, 300);
-  ellipse(700, 900, 400, 300);
-  ellipse(950, 850, 400, 300);
+ // ellipse(0, 800, 400, 300);
+  //ellipse(300, 750, 400, 300);
+  //ellipse(500, 800, 400, 300);
+  //ellipse(700, 900, 400, 300);
+  //ellipse(950, 850, 400, 300);
+   ellipse(0, cc, 400, 300);
+  ellipse(300, cc, 400, 300);
+  ellipse(500, cc, 400, 300);
+  ellipse(700, cc, 400, 300);
+  ellipse(950, cc, 400, 300);
+  cc = cc +1;
+  if (cc >height){
+    cc = 720;
+}
 }
 function sun() {
   fill(251,241,211);
   ellipse(60, 100, 80, 80);
 }
 function crystal() {
-  fill(241,211,251);
+  fill(241,211,251,100);
   rect(x2, 600, 30, 80);
   x2 = x2+5;
   if (x2>width) {
@@ -93,7 +125,7 @@ function rainbow() {
   }
 }
 function crystal2() {
-  fill(178,248,231);
+  fill(178,248,231,100);
   rect(x3, 300, 30, 80);
   x3 = x3+7;
   if (x3>width) {
@@ -101,7 +133,7 @@ function crystal2() {
   }
 }
 function crystal3() {
-  fill(230,248,178);
+  fill(230,248,178,100);
   rect(x4, 450, 30, 80);
   x4 = x4+9;
   if (x4>width) {
@@ -109,7 +141,7 @@ function crystal3() {
   }
 }
 function crystal4() {
-  fill(248,178,196);
+  fill(248,178,196,100);
   rect(x5, 200, 30, 80);
   x5 = x5+6;
   if (x5>width) {
